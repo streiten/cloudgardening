@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+@font-face {
+  font-family: 'RU-Light-Italic';
+  src: url('fonts/light_italic/ru_light_italic_bt-webfont.eot');
+  src: url('fonts/light_italic/ru_light_italic_bt-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/light_italic/ru_light_italic_bt-webfont.woff') format('woff'), url('fonts/light_italic/ru_light_italic_bt-webfont.ttf') format('truetype'), url('fonts/light_italic/ru_light_italic_bt-webfont.svg#RU-Light-Italic') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: 'RU-Light-Italic';
+}
+.typer-manager,
+.typer-create,
+.login,
+.register {
+  margin: 30px;
+}
+header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: black;
+  outline: 0;
+}
+.typer-wrap {
+  background-color: none;
+}
+.typer-wrap h1 {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 200px;
+  border-bottom: 10px solid white;
+}
+.typer {
+  margin: 0 auto;
+}
+/*
+.typer-manage {
+
+  margin: 20px;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .typer-wrap {
+    position: relative;
+    border: 1px solid black;
+
+    width: 30%;
+    padding-top:30%;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+  }
+
+  .typer {
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .action-buttons {
+    position: absolute;
+    top:0;right:0;
+    display: block;
+
+    form {
+      display: inline;
+    }
+  }
+
+}
+*/
+.typer-manage {
+  margin: 10px;
+}
+.typer-manage .typer {
+  display: inline-block;
+}
+.typer-manage .action-buttons {
+  display: inline-block;
+}
+.delete-typer {
+  border: none;
+  background: transparent;
+}
+.typer-wrap {
+  display: block;
+}
+form {
+  display: inline;
+}
+.form-control {
+  border-radius: 0;
+  border-color: black;
+}
+/*# sourceMappingURL=main.css.map */
