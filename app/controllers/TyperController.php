@@ -85,8 +85,8 @@ class TyperController extends \BaseController {
 			}
 		} 
 
-		return Redirect::route('manage');
-		//->with('messages', ['Done! Have fun!'] );
+		return Redirect::route('manage')
+            ->with('message', 'Import success!' );
 	}
 
 

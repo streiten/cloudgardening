@@ -38,8 +38,8 @@ class UserController extends \BaseController {
 
 		$rules = [
 			'email' => 'required|email|unique:users',
-			'password' => 'required|alpha_num|between:6,12|confirmed',
-			'password_confirmation' => 'required|alpha_num|between:6,12'
+			'password' => 'required|between:6,12|confirmed',
+			'password_confirmation' => 'required|between:6,12'
 		];
 
 		$niceNames = array(
