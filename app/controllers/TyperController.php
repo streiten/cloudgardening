@@ -32,7 +32,7 @@ class TyperController extends \BaseController {
 		if (Cookie::get('auhash')) {
 
 			$username = Cookie::get('auhash');
-			$user = User::where('user','=',$username)->first();
+			$user = User::where('email','=',$username)->first();
 			$uid = $user->id;
 			$cookieTypers = Typer::where('uid','=',$uid)->orderBy('created_at','desc')->get();
 
@@ -68,7 +68,7 @@ class TyperController extends \BaseController {
 		if (Cookie::get('auhash')) {
 
 			$username = Cookie::get('auhash');
-			$user = User::where('user','=',$username)->first();
+			$user = User::where('email','=',$username)->first();
 			
 			// cookie uid
 			$cuid = $user->id;
@@ -175,7 +175,7 @@ class TyperController extends \BaseController {
 		$rules = [
 			'typer' => 'required',
 			'my_name'   => 'honeypot',
-    	'my_time'   => 'required|honeytime:2'
+    	    'my_time'   => 'required|honeytime:2'
 		];
 
     $messages = array(
@@ -195,7 +195,7 @@ class TyperController extends \BaseController {
 			} else if (Cookie::get('auhash')) {
 				
 				$username = Cookie::get('auhash');
-				$user = User::where('user','=',$username)->first();
+				$user = User::where('email','=',$username)->first();
 				$input['uid'] = $user->id;
 
 			} else {
@@ -203,7 +203,7 @@ class TyperController extends \BaseController {
 				$hash = Hash::make($input['typer']);
 				
 				$user = new User;
-				$user->user = $hash;
+				$user->email = $hash;
 				$user->save();
 
 				$cookie = Cookie::queue('auhash', $hash , 2628000);

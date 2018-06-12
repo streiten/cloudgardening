@@ -14,6 +14,9 @@
     {{ HTML::style('css/bootstrap-theme.css'); }}
     {{ HTML::style('css/main.css'); }}
     {{ HTML::style('css/font-awesome.min.css'); }}
+{{--
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+--}}
 
     {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'); }}
 
