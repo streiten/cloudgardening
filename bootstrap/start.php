@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('hort-box.local'),
-	'cloudgardening' => array('d3lta.me'),
+	'cloudgardening' => array('streiten01'),
 ));
 
 /*
