@@ -26,6 +26,8 @@ return array(
 	|
 	*/
 
+    /*	TODO: SSL*/
+
 	'url' => 'http://cloudgardening.com',
 
 	/*

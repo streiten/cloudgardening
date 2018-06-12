@@ -13,7 +13,7 @@
     {{ HTML::style('css/bootstrap.min.css'); }}
     {{ HTML::style('css/bootstrap-theme.css'); }}
     {{ HTML::style('css/main.css'); }}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    {{ HTML::style('css/font-awesome.min.css'); }}
 
     {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js'); }}
 
@@ -24,6 +24,7 @@
     <a class="" data-toggle="collapse" href="#menu" >+</a>
     <div class="collapse" id="menu">
         <ul class='list-unstyled'>
+            <li><a href="{{{ URL::route('home') }}}">Home</a></li>
             <li><a href="{{{ URL::route('create') }}}">Create</a></li>
             <li><a href="{{{ URL::route('manage') }}}">Manage</a></li>
             <li>-</li>

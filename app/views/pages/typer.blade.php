@@ -1,5 +1,7 @@
 @extends('layouts.layout')
-
+{{--
+TODO: hide input field, capture keystrokes, fake caret
+--}}
 @section('content')
     <div class="container">
         

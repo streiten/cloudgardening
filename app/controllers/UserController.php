@@ -21,14 +21,14 @@ class UserController extends \BaseController {
 	public function create()
 	{
 		return View::make('pages.register')
-		->with('body_class','register')
+		->with('body_class','page register')
 		->with('title','Create account');
 	}
 
 
 	/**
 	 * Store a newly created resource in storage.
-	 *
+     *
 	 * @return Response
 	 */
 	public function store()
@@ -37,36 +37,33 @@ class UserController extends \BaseController {
 		$input = Input::all();
 
 		$rules = [
-			'user' => 'required|email|unique:users',
+			'email' => 'required|email|unique:users',
 			'password' => 'required|alpha_num|between:6,12|confirmed',
 			'password_confirmation' => 'required|alpha_num|between:6,12'
 		];
 
 		$niceNames = array(
-		    'user' => 'e-mail',
+		    'email' => 'email',
 			'password' => 'password',
 			'password_confirmation' => 'confirm password',
 		);
 
-
-
 		$validator = Validator::make($input,$rules);
-		$validator->setAttributeNames($niceNames); 
+		$validator->setAttributeNames($niceNames);
 
 		if(!$validator->fails()){
 
 			$user = new User;
-			$user->user = Input::get('user');
+			$user->email = Input::get('email');
 		    $user->password = Hash::make(Input::get('password'));
 		    $user->save();
 
-			foreach ($input as $key => $value) {
+/*			foreach ($input as $key => $value) {
 				$message .= $key . ':'. $value . "\n\n";
-			}
-			// mail($to,$subject,$message,$headers);
+			}*/
 
 			return Redirect::to('login')
-			->with('message', 'Thanks for registering!');
+			->with('message', 'Thanks for registering!You can login now.');
 		}
 
 		return Redirect::route('userCreate')

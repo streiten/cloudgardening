@@ -1,13 +1,3 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-/* 	To embed your own fonts, use this syntax
-	and place your fonts inside the
-	library/fonts folder. For more information
-	on embedding fonts, go to:
-	http://www.fontsquirrel.com/
-	Be sure to remove the comment brackets.
-*/
 @font-face {
   font-family: 'RU-Light-Italic';
   src: url('fonts/light_italic/ru_light_italic_bt-webfont.eot');
@@ -18,18 +8,6 @@
 body {
   font-family: 'RU-Light-Italic';
 }
-.typer-manager,
-.typer-create,
-.login,
-.register {
-  margin: 30px;
-}
-header {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 9999;
-}
 a,
 a:hover,
 a:visited,
@@ -38,6 +16,22 @@ a:focus {
   text-decoration: none;
   color: black;
   outline: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 16px;
+}
+header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+.page {
+  margin: 30px;
 }
 .typer-wrap {
   background-color: none;
@@ -98,9 +92,6 @@ a:focus {
 
 }
 */
-.typer-manage {
-  margin: 10px;
-}
 .typer-manage .typer {
   display: inline-block;
 }

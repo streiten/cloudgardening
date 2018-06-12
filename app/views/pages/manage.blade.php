@@ -46,13 +46,13 @@
     @endif
 
     @if (!Auth::check() && count($typers))
-        <div class="cta"><br><br>Save them forever and access from other devices ?<br>
+        <div class="cta"><br><br>Save them forever and access from other devices ?<br><br>
             <a href="{{ URL::route('userCreate'); }}" class="btn btn-primary">Register</a>
         </div>
     @endif
 
     @if (!count($typers))
-        <div class="cta">Nothing here yet! <br>
+        <div class="cta">Nothing here yet! <br><br>
             <a href="{{ URL::route('create'); }}" class="btn btn-primary" >Create</a>
         </div>
     @endif

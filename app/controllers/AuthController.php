@@ -21,7 +21,7 @@ class AuthController extends \BaseController {
 	{
 		$input = Input::all();
 
-		if (Auth::attempt(array('user' => $input['username'], 'password' => $input['password'])))
+		if (Auth::attempt(array('email' => $input['username'], 'password' => $input['password'])))
 		{
 		    return Redirect::intended('/');
 
@@ -29,7 +29,7 @@ class AuthController extends \BaseController {
 			
 			$errors = array('login' => 'Username or password wrong.');
 			return View::make('pages.login')
-			->with('body_class','login')
+			->with('body_class','page login')
 			->with('title','Login')
 			->withErrors($errors);
 		}

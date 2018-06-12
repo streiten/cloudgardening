@@ -15,14 +15,23 @@ class PageController extends \BaseController {
 	public function login()
 	{
 		return View::make('pages.login')
-		->with('body_class','login')
+		->with('body_class','page login')
 		->with('title','Login');
 	}
 
-	public function notfound()
+
+    public function legal()
+    {
+        return View::make('pages.legal')
+            ->with('body_class','page legal')
+            ->with('title','Legal & Privacy');
+    }
+
+
+    public function notfound()
 	{
 		return View::make('pages.notfound')
-		->with('body_class','four-O-four')
+		->with('body_class','page four-O-four')
 		->with('title','Not Found!');
 	}
 

@@ -16,7 +16,7 @@ class TyperController extends \BaseController {
 		return View::make('pages.latest')
 		->with(['typers'=> $typers])
 		->with('title','Latest Typers')
-		->with('body_class','list_typers');
+		->with('body_class','page list_typers');
 	}
 
 	public function manage()
@@ -60,7 +60,7 @@ class TyperController extends \BaseController {
 			->with($typerCollection)
 		// ->with('messages', $messages )
 			->with('title','Manage Typers')
-			->with('body_class','typer-manage');
+			->with('body_class','page typer-manage');
 	}
 
 	public function importCookieTypers () {
@@ -89,7 +89,9 @@ class TyperController extends \BaseController {
 		//->with('messages', ['Done! Have fun!'] );
 	}
 
-	public function supermanage()
+
+
+    public function supermanage()
 	{
 		$uid = Auth::user()->id;
 		
@@ -100,7 +102,7 @@ class TyperController extends \BaseController {
 			return View::make('pages.supermanage')
 			->with(['typers'=> $typers])
 			->with('title','Manage Typers')
-			->with('body_class','typer-manage typer-supermanage');
+			->with('body_class','page typer-manage typer-supermanage');
 		
 		} else {
 			
@@ -153,7 +155,7 @@ class TyperController extends \BaseController {
 		$PageController = new PageController();
 		
 		return View::make('pages.typer')
-		->with('body_class','typer-create')
+		->with('body_class','page typer-create')
 		->with('title','Typer')
 		->with('typer',new Typer);
 	}
@@ -161,8 +163,11 @@ class TyperController extends \BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+     * TODO: preserve newlines
+     *
 	 * @return Response
 	 */
+
 	public function store()
 	{
 		$input = Input::all();
@@ -288,6 +293,8 @@ class TyperController extends \BaseController {
 		return Redirect::route('manage');	
 	}
 
+
+    /* TODO: Implemend Message/Worker Que, generate Versions for OG:Graph Tags and download on create - replace by paper.js for SVG export ? */
 	public function shot($slug)
 	{
 		$browsershot = new Spatie\Browsershot\Browsershot();
